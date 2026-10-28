@@ -1,0 +1,8 @@
+node_modules
+dist
+models
+logs
+launchd
+.env
+config/character.json
+*.mp3
