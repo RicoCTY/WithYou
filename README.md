@@ -42,25 +42,6 @@ Leave the terminal open. `Ctrl+C` stops the bot.
 
 ## Configuration
 
-### `.env`
-
-This file is not committed. It holds credentials and which Discord server this process is attached to.
-
-| Variable | Required | Purpose |
-| --- | --- | --- |
-| `DISCORD_TOKEN` | yes | Bot token from the Discord developer portal |
-| `DISCORD_CLIENT_ID` | yes | Application id, used to register slash commands and build the invite link |
-| `DISCORD_GUILD_ID` | yes | Server id. This is not a channel id. Right-click the server icon with Developer Mode on and choose Copy Server ID |
-| `VOICE_CHANNEL_ID` | no | Voice channel the bot joins on startup. Right-click the channel and choose Copy Channel ID |
-| `FISH_API_KEY` | yes | Fish Audio key |
-| `MINIMAX_API_KEY` | yes | MiniMax key. Paste it as plain text. Lookalike letters from a chat app will be rejected |
-| `MINIMAX_BASE_URL` | yes | `https://api.minimaxi.com/v1` for a China account. `https://api.minimax.io/v1` for an international account |
-| `MINIMAX_MODEL` | no | Defaults to `MiniMax-M3`. Thinking is always turned off |
-| `FISH_VOICE_ID` | no | Overrides `voice.voiceId` in the character file |
-| `FISH_MODEL` | no | Overrides `voice.model` |
-
-If `DISCORD_GUILD_ID` is not a server the bot has joined, startup still registers `/join` and `/leave` on the servers it is actually in, and prints those server ids.
-
 ### `config/character.json`
 
 Copy `config/character.example.json` to `config/character.json`. The copy is gitignored, so each deployment can be a different person.
@@ -110,5 +91,3 @@ Recordings of replies are written to `logs/*.mp3`. When the folder reaches 10 MP
 | `src/config.ts` | Loads `.env` and `config/character.json` |
 | `config/character.example.json` | Character template |
 | `config/character.json` | This deployment's character. Not committed |
-
-Do not commit `.env`, `config/character.json`, or `launchd/`. The login agent is specific to one machine.
